@@ -57,7 +57,7 @@ class Transaction {
   ) =>
       Transaction._(
         id ??
-            '${operation ?? 'txn'}'
+            '${operation?.split(' ').join('_') ?? 'txn'}'
                 '-'
                 '${DateTime.now().millisecondsSinceEpoch.toRadixString(36)}'
                 '-'

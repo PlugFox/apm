@@ -44,6 +44,7 @@ class Transport {
         _queue.removeFirst();
       }
     } on Object {
+      _connection.close();
       // ignore
     } finally {
       _$sending = false;
@@ -95,15 +96,15 @@ class Connection {
           return true;
         })
         .first
-        .timeout(Duration(seconds: 5));
+        .timeout(Duration(seconds: 7));
   }
 
   /// Closes the connection
   Future<void> close() async {
     try {
       _state = ConnectionState.closing;
-      await _subscription?.cancel();
-      await _client?.sink.close(status.goingAway, 'RECONNECTING');
+      _subscription?.cancel().ignore();
+      _client?.sink.close(status.goingAway, 'RECONNECTING').ignore();
     } on Object {
       dev.debugger();
     } finally {
@@ -117,7 +118,6 @@ class Connection {
           reconnect:
           case ConnectionState.closed:
             if (uri == null) return;
-            _subscription?.cancel().ignore();
             _state = ConnectionState.establishing;
             final client = _client = ws.WebSocketChannel.connect(uri);
             _subscription = client.stream.listen(
