@@ -26,7 +26,7 @@ void Function(
       developer.log(
         '[$prefix] ${reason ?? message}',
         level: level,
-        name: 'octopus',
+        name: 'apm',
         error: message is Exception || message is Error ? message : null,
         stackTrace: stackTrace,
       );
