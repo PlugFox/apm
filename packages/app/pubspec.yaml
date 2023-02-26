@@ -11,16 +11,26 @@ environment:
 
 
 dependencies:
+  # Flutter SDK
   flutter:
     sdk: flutter
+
+  # Localization
   flutter_localizations:
     sdk: flutter
+  intl: any
+
+  # Utils
   collection: any
   async: any
   meta: any
-  intl: any
   crypto: ^3.0.2
   protobuf: ^2.1.0
+
+  # Web server
+  shelf: any
+  shelf_web_socket: any
+  web_socket_channel: any
 
 
 dev_dependencies:
@@ -30,8 +40,10 @@ dev_dependencies:
   # Integration tests for Flutter
   integration_test:
     sdk: flutter
+
   # Linting
   flutter_lints: ^2.0.0
+
   # Codegen
   build_runner: any
   flutter_launcher_icons: any

@@ -51,7 +51,7 @@ app.*.map.json
 # Logs
 log.txt
 
-# emulator
+# Emulator
 emulator/
 
 # Temporary files
@@ -65,3 +65,6 @@ coverage/
 
 # Flutter Version Manager
 .fvm/flutter_sdk
+
+# Generated files
+lib/generated_plugin_registrant.dart

@@ -25,19 +25,18 @@
   },
   "dart.lineLength": 120,
 
-  //"dart.doNotFormat": [
-  //  "**.g.dart",
-  //  "**.gql.dart",
-  //  "**.freezed.dart",
-  //  "**.config.dart",
-  //  "**.mocks.dart",
-  //  "**.gen.dart",
-  //  "**.pb.dart",
-  //  "**.pbenum.dart",
-  //  "**.pbjson.dart",
-  //  "**/messages_*.dart",
-  //  "**/l10n.dart"
-  //],
+  "dart.doNotFormat": [
+    "**.g.dart",
+    "**.gql.dart",
+    "**.freezed.dart",
+    "**.config.dart",
+    "**.mocks.dart",
+    "**.gen.dart",
+    "**.pb.dart",
+    "**.pbenum.dart",
+    "**.pbjson.dart",
+    "**/generated/**"
+  ],
 
   // Flutter Version Manager
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
