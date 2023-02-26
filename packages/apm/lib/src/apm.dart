@@ -9,8 +9,8 @@ import 'transaction.dart';
 
 /// Application Performance Monitoring
 @sealed
-abstract class APM {
-  APM._();
+abstract class Monitoring {
+  Monitoring._();
 
   /// Setup the application performance monitoring library.
   /// [project] is the project id. E.g. "my-project-1234"
