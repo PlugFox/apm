@@ -30,7 +30,7 @@ void $log(
     stack: st.Trace.format(stackTrace ?? StackTrace.current),
     tags: tags ?? const <String, String>{},
     breadcrumbs: <String>[...?breadcrumbs?.map<String>((e) => e.toString())],
-    span: $transactionId() ?? '',
+    span: transactionId ?? $transactionId() ?? '',
   );
   Transport().send($messagesCodec.encode(message));
 }
